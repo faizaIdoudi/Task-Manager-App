@@ -74,7 +74,7 @@ The application allows users to:
    
 2. Navigate to the backend folder:
    ```bash
-  cd backend
+    cd backend
 
    
 3. Open the project in IntelliJ IDEA (or any Java IDE).
