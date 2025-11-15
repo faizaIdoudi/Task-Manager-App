@@ -16,7 +16,6 @@
 - [Features](#features)
 - [Backend Setup](#backend-setup)
 - [Frontend Setup](#frontend-setup)
-- [Screenshots](#screenshots)
 - [Folder Structure](#folder-structure)
 - [Additional Considerations](#additional-considerations)
 
