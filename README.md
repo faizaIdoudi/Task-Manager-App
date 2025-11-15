@@ -111,4 +111,4 @@ The frontend communicates with the backend API at: http://localhost:8080/api/tas
 
 
 ## 🎯 Final Note
-This README provides **step-by-step instructions** to run both backend and frontend. Open backend in IntelliJ IDEA, frontend in VS Code, and you’ll have the application running locally at http://localhost:3000 with backend API at http://localhost:8080.
+This README provides **step-by-step instructions** to run both backend and frontend. Open backend in **IntelliJ IDEA**, frontend in **VS Code**, and you’ll have the application running locally at http://localhost:3000 with backend API at http://localhost:8080.
