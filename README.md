@@ -1,6 +1,6 @@
 # Task Manager Web Application
 
-![Project Screenshot](./tasmanager.JPG)  
+![Project Screenshot](tasmanager.JPG)  
 *Screenshot: Task Manager interface with Pending and Completed tasks*
 
 ## Table of Contents
