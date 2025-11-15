@@ -14,7 +14,7 @@ function TaskForm({ task, onTaskCreated, onCancel }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title) return alert("Le titre est obligatoire");
+    if (!title) return alert("Title is required");
 
     try {
       if (task) {
@@ -27,46 +27,52 @@ function TaskForm({ task, onTaskCreated, onCancel }) {
       setDescription("");
     } catch (error) {
       console.error(error);
-      alert("Impossible de créer/modifier la tâche.");
+      alert("Error creating/updating task");
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow-md rounded-lg p-6 mb-6 flex flex-col gap-4"
+      className="bg-white shadow-md rounded-lg p-4 mb-6 flex flex-col md:flex-row md:items-center md:space-x-4 space-y-3 md:space-y-0 max-w-5xl mx-auto"
     >
+      {/* Title: smaller width */}
       <input
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
-        className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="flex-[0_0_30%] border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-400 outline-none"
       />
+
+      {/* Description: takes remaining space */}
       <input
         type="text"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="flex-1 border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-400 outline-none"
       />
-      <div className="flex gap-2">
-        <button
-          type="submit"
-          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-        >
-          {task ? "Update" : "Add"}
-        </button>
+
+      <div className="flex space-x-2">
         {task && (
           <button
             type="button"
             onClick={onCancel}
-            className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 transition"
+            className="px-4 py-2 rounded bg-gray-300 text-gray-700 hover:bg-gray-400 transition"
           >
             Cancel
           </button>
         )}
+        <button
+          type="submit"
+          className={`px-4 py-2 rounded text-white ${
+            task ? "bg-blue-500 hover:bg-blue-600" : "bg-green-500 hover:bg-green-600"
+          } transition`}
+        >
+          {task ? "Update" : "Add"}
+        </button>
       </div>
     </form>
   );

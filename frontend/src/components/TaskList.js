@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import TaskForm from "./TaskForm";
-import { getTasks, updateTask, deleteTask } from "../services/TaskService";
+import TaskItem from "./TaskItem";
+import { getTasks, updateTask } from "../services/TaskService";
+import { AnimatePresence, Reorder } from "framer-motion";
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -12,34 +14,10 @@ function TaskList() {
       setTasks(response.data);
     } catch (error) {
       console.error(error);
-      alert("Impossible de récupérer les tâches.");
+      alert("Cannot fetch tasks");
     }
   };
 
-  const toggleCompleted = async (task) => {
-    try {
-      await updateTask(task.id, { ...task, completed: !task.completed });
-      fetchTasks();
-    } catch (error) {
-      console.error(error);
-      alert("Impossible de mettre à jour la tâche.");
-    }
-  };
-
-  const handleDelete = async (taskId) => {
-    if (window.confirm("Supprimer cette tâche ?")) {
-      try {
-        await deleteTask(taskId);
-        fetchTasks();
-      } catch (error) {
-        console.error(error);
-        alert("Impossible de supprimer la tâche.");
-      }
-    }
-  };
-
-  const startEditing = (task) => setEditingTask(task);
-  const cancelEditing = () => setEditingTask(null);
   const handleUpdate = async (updatedTask) => {
     try {
       await updateTask(updatedTask.id, updatedTask);
@@ -47,79 +25,65 @@ function TaskList() {
       fetchTasks();
     } catch (error) {
       console.error(error);
-      alert("Impossible de mettre à jour la tâche.");
+      alert("Cannot update task");
     }
   };
+
+  const startEditing = (task) => setEditingTask(task);
+  const cancelEditing = () => setEditingTask(null);
 
   useEffect(() => {
     fetchTasks();
   }, []);
 
+  const completedTasks = tasks.filter((t) => t.completed);
+  const pendingTasks = tasks.filter((t) => !t.completed);
+
   return (
-    <div className="max-w-5xl mx-auto px-6">
+    <div className="max-w-6xl mx-auto px-4 py-6">
+      {/* Form */}
       {!editingTask && <TaskForm onTaskCreated={fetchTasks} />}
       {editingTask && (
-        <TaskForm
-          task={editingTask}
-          onTaskCreated={handleUpdate}
-          onCancel={cancelEditing}
-        />
+        <TaskForm task={editingTask} onTaskCreated={handleUpdate} onCancel={cancelEditing} />
       )}
 
-      <div className="overflow-x-auto shadow-md rounded-lg">
-        <table className="min-w-full bg-white divide-y divide-gray-200">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="py-3 px-6 text-left text-gray-700 font-semibold">Title</th>
-              <th className="py-3 px-6 text-left text-gray-700 font-semibold">Description</th>
-              <th className="py-3 px-6 text-center text-gray-700 font-semibold">Completed</th>
-              <th className="py-3 px-6 text-center text-gray-700 font-semibold">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100">
-            {tasks.length === 0 ? (
-              <tr>
-                <td colSpan="4" className="text-center py-6 text-gray-500">
-                  No tasks yet.
-                </td>
-              </tr>
-            ) : (
-              tasks.map((task) => (
-                <tr
-                  key={task.id}
-                  className={`${
-                    task.completed ? "bg-green-50 line-through text-green-800" : ""
-                  }`}
-                >
-                  <td className="py-3 px-6">{task.title}</td>
-                  <td className="py-3 px-6">{task.description}</td>
-                  <td className="py-3 px-6 text-center">
-                    <input
-                      type="checkbox"
-                      checked={task.completed}
-                      onChange={() => toggleCompleted(task)}
-                      className="w-5 h-5 cursor-pointer"
-                    />
-                  </td>
-                  <td className="py-3 px-6 text-center flex justify-center gap-2">
-                    <button
-                      onClick={() => startEditing(task)}
-                      className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
-                    >
-                      Modify
-                    </button>
-                    <button
-                      onClick={() => handleDelete(task.id)}
-                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+      {/* Columns */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        {/* Completed Tasks */}
+        <div>
+          <h2 className="text-xl font-bold mb-4 text-green-600">Completed</h2>
+          <Reorder.Group axis="y" values={completedTasks} onReorder={setTasks}>
+            <AnimatePresence>
+              {completedTasks.length === 0 ? (
+                <p className="text-gray-500">No completed tasks</p>
+              ) : (
+                completedTasks.map((task) => (
+                  <Reorder.Item key={task.id} value={task} as="div">
+                    <TaskItem task={task} refreshTasks={fetchTasks} onEdit={startEditing} />
+                  </Reorder.Item>
+                ))
+              )}
+            </AnimatePresence>
+          </Reorder.Group>
+        </div>
+
+        {/* Pending Tasks */}
+        <div>
+          <h2 className="text-xl font-bold mb-4 text-yellow-600">Pending</h2>
+          <Reorder.Group axis="y" values={pendingTasks} onReorder={setTasks}>
+            <AnimatePresence>
+              {pendingTasks.length === 0 ? (
+                <p className="text-gray-500">No pending tasks</p>
+              ) : (
+                pendingTasks.map((task) => (
+                  <Reorder.Item key={task.id} value={task} as="div">
+                    <TaskItem task={task} refreshTasks={fetchTasks} onEdit={startEditing} />
+                  </Reorder.Item>
+                ))
+              )}
+            </AnimatePresence>
+          </Reorder.Group>
+        </div>
       </div>
     </div>
   );
