@@ -77,3 +77,17 @@ The application allows users to:
    ```bash
    git clone https://github.com/faizaIdoudi/Task-Manager-App.git
    cd Task-Manager-App/backend
+
+
+## Frontend Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/faizaIdoudi/Task-Manager-App.git
+   cd Task-Manager-App/backend
+
+
+## Folder Structure
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/faizaIdoudi/Task-Manager-App.git
+   cd Task-Manager-App/backend
