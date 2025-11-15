@@ -17,7 +17,6 @@
 - [Backend Setup](#backend-setup)
 - [Frontend Setup](#frontend-setup)
 - [Folder Structure](#folder-structure)
-- [Additional Considerations](#additional-considerations)
 
 ---
 
@@ -74,3 +73,7 @@ The application allows users to:
    git clone https://github.com/faizaIdoudi/Task-Manager-App.git
    cd Task-Manager-App/backend
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/faizaIdoudi/Task-Manager-App.git
+   cd Task-Manager-App/backend
