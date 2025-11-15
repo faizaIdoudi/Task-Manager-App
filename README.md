@@ -67,18 +67,22 @@ The application allows users to:
 ## Backend Setup
 1. Clone the repository and navigate to the backend folder:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-   cd YOUR_REPOSITORY/backend
+   git clone https://github.com/faizaIdoudi/Task-Manager-App.git
+
 2. Open the backend project in IntelliJ IDEA or your preferred IDE.
 
 3. Run the Spring Boot application:
+4. ```bash
    src/main/java/com/faiza/taskmanager/TaskManagerApplication.java
 Right-click → Run
-4. The backend runs at:
+5. The backend runs at:
+    ```bash
    http://localhost:8080
-5. H2 Database Console:
+6. H2 Database Console:
+   ```bash
    http://localhost:8080/h2-console
 Use the following credentials:
+ ```bash
 JDBC URL: jdbc:h2:mem:testdb
 User: sa
 Password: (leave empty)
@@ -87,8 +91,10 @@ Password: (leave empty)
 1. Navigate to the frontend folder:
    cd ../frontend
 2. Install dependencies:
+   ```bash
    npm install
 3. Start the React development server:
+   ```bash
    npm start
 
 5. 
