@@ -87,12 +87,11 @@ The application allows users to:
 
 🔑 H2 Database Console: http://localhost:8080/h2-console
 
-      ```bash
-   src/main/java/com/faiza/taskmanager/TaskManagerApplication.java
+      
      ```bash
-     JDBC URL: jdbc:h2:mem:testdb
-     User: sa
-     Password: (leave empty)
+      JDBC URL: jdbc:h2:mem:testdb
+      User: sa
+      Password: (leave empty)
 
 
 ## Frontend Setup
