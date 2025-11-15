@@ -1,7 +1,11 @@
 # Task Manager Web Application
 
-<img width="1882" height="925" alt="image" src="https://github.com/user-attachments/assets/c72d8837-08dd-45ee-8288-64cd77801236" />
+[![Java](https://img.shields.io/badge/Java-22-blue?style=for-the-badge&logo=java)](https://www.java.com/)
+[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![H2 Database](https://img.shields.io/badge/H2-Database-purple?style=for-the-badge&logo=h2database)](http://www.h2database.com/html/main.html)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3-blue?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
+<img width="1882" height="925" alt="Task Manager UI" src="https://github.com/user-attachments/assets/c72d8837-08dd-45ee-8288-64cd77801236" />
 
 *Screenshot: Task Manager interface with Pending and Completed tasks*
 
@@ -65,36 +69,7 @@ The application allows users to:
 ---
 
 ## Backend Setup
-1. Clone the repository and navigate to the backend folder:
+1. Clone the repository:
    ```bash
    git clone https://github.com/faizaIdoudi/Task-Manager-App.git
-
-2. Open the backend project in IntelliJ IDEA or your preferred IDE.
-
-3. Run the Spring Boot application:
-4. ```bash
-   src/main/java/com/faiza/taskmanager/TaskManagerApplication.java
-Right-click → Run
-5. The backend runs at:
-    ```bash
-   http://localhost:8080
-6. H2 Database Console:
-   ```bash
-   http://localhost:8080/h2-console
-Use the following credentials:
- ```bash
-JDBC URL: jdbc:h2:mem:testdb
-User: sa
-Password: (leave empty)
-
-## Frontend Setup
-1. Navigate to the frontend folder:
-   cd ../frontend
-2. Install dependencies:
-   ```bash
-   npm install
-3. Start the React development server:
-   ```bash
-   npm start
-
-5. 
+   cd Task-Manager-App/backend
