@@ -16,7 +16,6 @@
 - [Features](#features)
 - [Backend Setup](#backend-setup)
 - [Frontend Setup](#frontend-setup)
-- [Folder Structure](#folder-structure)
 
 ---
 
@@ -109,12 +108,7 @@ The application allows users to:
 ✅ Frontend will run at: http://localhost:3000
 
 The frontend communicates with the backend API at: http://localhost:8080/api/tasks
-## Folder Structure
 
 
-task-manager/ │── backend/ # Spring Boot REST API │── frontend/ # React.js app with TailwindCSS │── README.md # Project documentation
-
-
-
-🎯 Final Note
-This README provides step-by-step instructions to run both backend and frontend. Open backend in IntelliJ IDEA, frontend in VS Code, and you’ll have the application running locally at http://localhost:3000 with backend API at http://localhost:8080.
+## 🎯 Final Note
+This README provides **step-by-step instructions** to run both backend and frontend. Open backend in IntelliJ IDEA, frontend in VS Code, and you’ll have the application running locally at http://localhost:3000 with backend API at http://localhost:8080.
