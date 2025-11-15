@@ -1,6 +1,7 @@
 # Task Manager Web Application
 
 [![Java](https://img.shields.io/badge/Java-22-blue?style=for-the-badge&logo=java)](https://www.java.com/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-brightgreen?style=for-the-badge&logo=springboot)](https://spring.io/projects/spring-boot)
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![H2 Database](https://img.shields.io/badge/H2-Database-purple?style=for-the-badge&logo=h2database)](http://www.h2database.com/html/main.html)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3-blue?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
@@ -39,7 +40,7 @@ The application allows users to:
 
 ## Technologies Used
 **Backend**
-- Java 22 / Spring Boot
+- Java 22 / Spring Boot 3.2
 - Spring Web (REST APIs)
 - H2 Database (in-memory)
 - Spring Validation & Exception Handling
@@ -73,3 +74,4 @@ The application allows users to:
    ```bash
    git clone https://github.com/faizaIdoudi/Task-Manager-App.git
    cd Task-Manager-App/backend
+
