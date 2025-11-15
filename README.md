@@ -34,7 +34,7 @@ The application allows users to:
 
 ## Technologies Used
 **Backend**
-- Java 17+ / Spring Boot
+- Java 22 / Spring Boot
 - Spring Web (REST APIs)
 - H2 Database (in-memory)
 - Spring Validation & Exception Handling
