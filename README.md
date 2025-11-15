@@ -110,10 +110,12 @@ The application allows users to:
 
 The frontend communicates with the backend API at: http://localhost:8080/api/tasks
 ## Folder Structure
-   task-manager/
+
+ task-manager/
 │── backend/        # Spring Boot REST API
 │── frontend/       # React.js app with TailwindCSS
 │── README.md       # Project documentation
+
 
 
 🎯 Final Note
