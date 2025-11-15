@@ -87,10 +87,10 @@ The application allows users to:
 
 🔑 H2 Database Console: http://localhost:8080/h2-console
    
-```bash
-JDBC URL: jdbc:h2:mem:testdb
-User: sa
-Password: (leave empty)
+    ```bash
+     JDBC URL: jdbc:h2:mem:testdb
+     User: sa
+     Password: (leave empty)
 
 
 ## Frontend Setup
