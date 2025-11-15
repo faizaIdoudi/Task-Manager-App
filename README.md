@@ -1,6 +1,7 @@
 # Task Manager Web Application
 
-<img width="1882" height="925" alt="image" src="https://github.com/user-attachments/assets/185fb14a-1ddc-4079-804f-dccce1a2cb2c" />
+<img width="1882" height="925" alt="image" src="https://github.com/user-attachments/assets/c72d8837-08dd-45ee-8288-64cd77801236" />
+
 
 *Screenshot: Task Manager interface with Pending and Completed tasks*
 
@@ -48,7 +49,7 @@ The application allows users to:
 
 **Tools**
 - Git / GitHub for version control
-- VS Code for development
+- VS Code / IntelliJ IDEA for development
 - Postman (optional, for API testing)
 
 ---
@@ -64,6 +65,30 @@ The application allows users to:
 ---
 
 ## Backend Setup
-1. Navigate to the backend folder:
+1. Clone the repository and navigate to the backend folder:
    ```bash
-   cd backend
+   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+   cd YOUR_REPOSITORY/backend
+2. Open the backend project in IntelliJ IDEA or your preferred IDE.
+
+3. Run the Spring Boot application:
+   src/main/java/com/faiza/taskmanager/TaskManagerApplication.java
+Right-click → Run
+4. The backend runs at:
+   http://localhost:8080
+5. H2 Database Console:
+   http://localhost:8080/h2-console
+Use the following credentials:
+JDBC URL: jdbc:h2:mem:testdb
+User: sa
+Password: (leave empty)
+
+## Frontend Setup
+1. Navigate to the frontend folder:
+   cd ../frontend
+2. Install dependencies:
+   npm install
+3. Start the React development server:
+   npm start
+
+5. 
