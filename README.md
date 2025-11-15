@@ -71,23 +71,50 @@ The application allows users to:
 1. Clone the repository:
    ```bash
    git clone https://github.com/faizaIdoudi/Task-Manager-App.git
-   cd Task-Manager-App/backend
-
-1. Clone the repository:
+   
+2. Navigate to the backend folder:
    ```bash
-   git clone https://github.com/faizaIdoudi/Task-Manager-App.git
-   cd Task-Manager-App/backend
+  cd backend
 
+   
+3. Open the project in IntelliJ IDEA (or any Java IDE).
+4. Run the main class:
+   ```bash
+   src/main/java/com/faiza/taskmanager/TaskManagerApplication.java
+→ Right-click → Run
+
+✅ Backend will start at: http://localhost:8080
+
+🔑 H2 Database Console: http://localhost:8080/h2-console
+
+JDBC URL: jdbc:h2:mem:testdb
+
+User: sa
+
+Password: (leave empty)
 
 ## Frontend Setup
-1. Clone the repository:
+1. Navigate to the frontend folder:
    ```bash
-   git clone https://github.com/faizaIdoudi/Task-Manager-App.git
-   cd Task-Manager-App/backend
+    cd frontend
 
+2. Install dependencies:
+   ```bash
+   npm install
 
+3. Start the development server:
+   ```bash
+   npm start
+
+✅ Frontend will run at: http://localhost:3000
+
+The frontend communicates with the backend API at: http://localhost:8080/api/tasks
 ## Folder Structure
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/faizaIdoudi/Task-Manager-App.git
-   cd Task-Manager-App/backend
+   task-manager/
+│── backend/        # Spring Boot REST API
+│── frontend/       # React.js app with TailwindCSS
+│── README.md       # Project documentation
+
+
+🎯 Final Note
+This README provides step-by-step instructions to run both backend and frontend. Open backend in IntelliJ IDEA, frontend in VS Code, and you’ll have the application running locally at http://localhost:3000 with backend API at http://localhost:8080.
