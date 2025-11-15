@@ -1,6 +1,7 @@
 # Task Manager Web Application
 
-![Project Screenshot](tasmanager.JPG)  
+<img width="1882" height="925" alt="image" src="https://github.com/user-attachments/assets/185fb14a-1ddc-4079-804f-dccce1a2cb2c" />
+
 *Screenshot: Task Manager interface with Pending and Completed tasks*
 
 ## Table of Contents
