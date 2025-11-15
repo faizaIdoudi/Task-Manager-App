@@ -86,12 +86,13 @@ The application allows users to:
 ✅ Backend will start at: http://localhost:8080
 
 🔑 H2 Database Console: http://localhost:8080/h2-console
+   ```bash
 
-JDBC URL: jdbc:h2:mem:testdb
+    JDBC URL: jdbc:h2:mem:testdb
 
-User: sa
+    User: sa
 
-Password: (leave empty)
+    Password: (leave empty)
 
 ## Frontend Setup
 1. Navigate to the frontend folder:
